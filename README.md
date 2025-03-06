@@ -1,4 +1,4 @@
-# flowchart-demo# 美国投资新规合规流程图
+美国投资新规合规流程图
 
 ```mermaid
 graph TD
