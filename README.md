@@ -1,16 +1,17 @@
+```mermaid
 graph TD
-    A["交易是否涉及'美国人'?\n（公民/居民/分支机构/子公司）"] -->|是| B["交易类型是否受管制?\n（股权/债务/可转换股权/中国相关）"]
-    A -->|否| RESULT1["交易不受限制\n（新规不适用）"]
-    B -->|是| C["是否符合例外情况?\n（公开证券/衍生品/股权激励等）"]
-    B -->|否| RESULT2["交易可继续进行"]
+    A["交易是否涉及'美国人'?\n（公民/居民/分支机构）"] -->|是| B["交易类型受管制?\n（股权/债务/中国关联）"]
+    A -->|否| RESULT1["交易不受限制"]
+    B -->|是| C["符合例外情况?"]
+    B -->|否| RESULT2["可进行"]
     C -->|是| RESULT2
-    C -->|否| D["是否与中国有关联?\n（实体/持股50%+/政府关联）"]
-    D -->|是| E["涉及敏感技术?\n（半导体/量子计算/AI）"]
+    C -->|否| D["中国关联?"]
+    D -->|是| E["敏感技术?"]
     D -->|否| RESULT2
-    E -->|是| RESULT3["需通报或被禁止"]
+    E -->|是| RESULT3["需通报/禁止"]
     E -->|否| RESULT2
 
-    classDef decision fill:#f6f6f6,stroke:#333,stroke-width:2px;
-    classDef result fill:#e8f4ff,stroke:#1e88e5,stroke-width:2px;
+    classDef decision fill:#f6f6f6,stroke:#333
     class A,B,C,D,E decision
     class RESULT1,RESULT2,RESULT3 result
+```
